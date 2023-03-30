@@ -29,11 +29,18 @@ namespace ProductReviewManagementLINQ
         public void countOFReviewForProductID(List<ProductReviewModel> productReviews)
         {
             var result = (productReviews.GroupBy(product => product.ProductId).Select(p => new { ProductID = p.Key, Count = p.Count() }));
-            Console.WriteLine("Product ID\t|\tCount");
+            Console.WriteLine("Product ID Count");
             foreach (var item in result)
             {
                 Console.WriteLine(item.ProductID + " " + item.Count);
             }
+        }
+        public void GetProductIDAndReview(List<ProductReviewModel> productReviewModels)
+        {
+            var products = productReviewModels.Select(p => new { p.ProductId, p.Review }).ToList();
+
+            foreach ( var product in products)
+                Console.WriteLine("Id: " + product.ProductId + " " + product.Review);
         }
 
     }

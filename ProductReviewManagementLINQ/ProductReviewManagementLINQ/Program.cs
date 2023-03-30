@@ -43,7 +43,7 @@ namespace ProductReviewManagementLINQ
             while (true)
             {
                 Console.WriteLine();
-                Console.Write("1.Display reviews\n2.Pick top three\n3.Product Rating grater than three\n4.Count by product ID\nEnter a choice: ");
+                Console.Write("1.Display reviews\n2.Pick top three\n3.Product Rating grater than three\n4.Count by product ID\n5.productID and review\nEnter a choice: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -54,6 +54,8 @@ namespace ProductReviewManagementLINQ
                     case 3:reviewManagement.GetReviewsRatingGreaterThenThree(productReviews);
                         break;
                     case 4: reviewManagement.countOFReviewForProductID(productReviews);
+                        break;
+                    case 5:reviewManagement.GetProductIDAndReview(productReviews);
                         break;
                 }
             }
