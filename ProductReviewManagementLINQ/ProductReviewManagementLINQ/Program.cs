@@ -43,13 +43,15 @@ namespace ProductReviewManagementLINQ
             while (true)
             {
                 Console.WriteLine();
-                Console.Write("1.Display reviews\n2.Pick top three\nEnter a choice: ");
+                Console.Write("1.Display reviews\n2.Pick top three\n3.Product Rating grater than three\nEnter a choice: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:reviewManagement.DisplayReviews(productReviews);
                         break;
-                    case 2:reviewManagement.RetriveTop3Records(productReviews);
+                    case 2:reviewManagement.RetriveTopThreeRecords(productReviews);
+                        break;
+                    case 3:reviewManagement.GetReviewsRatingGreaterThenThree(productReviews);
                         break;
                 }
             }
