@@ -40,7 +40,20 @@ namespace ProductReviewManagementLINQ
             };
 
             ReviewManagement reviewManagement = new ReviewManagement();
-            reviewManagement.DisplayReviews(productReviews);
+            while (true)
+            {
+                Console.WriteLine();
+                Console.Write("1.Display reviews\n2.Pick top three\nEnter a choice: ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:reviewManagement.DisplayReviews(productReviews);
+                        break;
+                    case 2:reviewManagement.RetriveTop3Records(productReviews);
+                        break;
+                }
+            }
+            
             Console.ReadKey();
         }
     }
